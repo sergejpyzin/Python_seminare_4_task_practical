@@ -11,17 +11,13 @@ import random
 number_of_bushes = int(input("Введите количество кустов: "))
 some_list = [random.randint(5, 10) for _ in range(number_of_bushes)]
 print(some_list)
-harvest = 0
 harvest_list = []
 
 for i in range(len(some_list)):
     if i != len(some_list) - 1:
-        harvest = some_list[i] + some_list[i + 1] + some_list[i - 1]
-        harvest_list.append(harvest)
+        harvest_list.append(some_list[i] + some_list[i + 1] + some_list[i - 1])
     else:
-        harvest = some_list[i] + some_list[0] + some_list[i - 1]
-        harvest_list.append(harvest)
+        harvest_list.append(some_list[i] + some_list[0] + some_list[i - 1])
 
-max_harvest = sorted(harvest_list)
-print(max_harvest)
-print(max_harvest[len(max_harvest) - 1])
+print(harvest_list)
+print(max(harvest_list))
